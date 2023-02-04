@@ -100,7 +100,7 @@ app.get("/users/:username", async (req, res) => {
 });
 
 //Show followers
-app.post("users/:username/followers", async (req, res) => {
+app.get("users/:username/followers", async (req, res) => {
   const { username } = req.params;
   const user = await User.find({ username: username });
   //console.dir(user);
@@ -108,7 +108,7 @@ app.post("users/:username/followers", async (req, res) => {
 });
 
 //Show following
-app.post("users/:username/following", async (req, res) => {
+app.get("users/:username/following", async (req, res) => {
   const { username } = req.params;
   const user = await User.find({ username: username });
   //console.dir(user);
